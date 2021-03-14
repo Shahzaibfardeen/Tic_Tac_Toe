@@ -1,0 +1,186 @@
+html {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: #eee;
+  color: #1a1a1a;
+  font-family: 'Open Sans', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin: 30px auto 40px auto;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #1a1a1a;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+  position: relative;
+}
+
+/* change color of square when hovering */
+.square:hover {
+  background-color: #ddd;
+}
+
+/* to disable the hover effect when a square is already selected
+    or when the game is over */
+.gameOver .square:hover,
+.square.X:hover,
+.square.O:hover {
+  background-color: inherit;
+  cursor: default;
+}
+
+/* display outline and foreground overlapping and center contents */
+
+.square .outline {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+}
+
+.square .foreground {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+}
+
+/* outline and foreground of a square with X */
+
+.square.X .outline:before {
+  content: "";
+  background: #1a1a1a;
+  width: 14px;
+  height: 58px;
+  position: absolute;
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+.square.X .outline:after {
+  content: "";
+  background: #1a1a1a;
+  width: 14px;
+  height: 58px;
+  position: absolute;
+  transform: rotate(-45deg);
+  z-index: 2;
+}
+
+.square.X .foreground:before {
+  content: "";
+  background: #f03a17;
+  width: 8px;
+  height: 52px;
+  position: absolute;
+  transform: rotate(45deg);
+  z-index: 3;
+}
+
+.square.X .foreground:after {
+  content: "";
+  background: #f03a17;
+  width: 8px;
+  height: 52px;
+  position: absolute;
+  transform: rotate(-45deg);
+  z-index: 3;
+}
+
+/* outline and foreground of a square with O */
+
+.square.O .outline:before {
+  content: "";
+  background: transparent;
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  border-radius: 50%;
+  border: 14px solid #1a1a1a;
+  z-index: 2;
+}
+
+.square.O .foreground:after {
+  content: "";
+  background: transparent;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  border-radius: 50%;
+  border: 8px solid #0082a5;
+  z-index: 3;
+}
+
+/* hide outer borders of the squares */
+
+.square:nth-of-type(1),
+.square:nth-of-type(2),
+.square:nth-of-type(3) {
+  border-top: none;
+}
+
+.square:nth-of-type(1),
+.square:nth-of-type(4),
+.square:nth-of-type(7) {
+  border-left: none;
+}
+
+.square:nth-of-type(3),
+.square:nth-of-type(6),
+.square:nth-of-type(9) {
+  border-right: none;
+}
+
+.square:nth-of-type(7),
+.square:nth-of-type(8),
+.square:nth-of-type(9) {
+  border-bottom: none;
+}
+
+/* new game button */
+
+button {
+  background-color: #008888;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
+  transition: 0.2s ease-out;
+  cursor: pointer;
+}
+
+/* change color and shadow of button when hovering */
+button:hover {
+  background-color: #009999;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16), 0 5px 6px rgba(0, 0, 0, 0.26);
+}
