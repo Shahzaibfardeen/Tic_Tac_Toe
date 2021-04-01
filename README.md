@@ -6,16 +6,12 @@
   <a href="https://youtu.be/TjKLbj9Ssqo"><img src="https://img.shields.io/badge/Watch%20me-code-red?style=for-the-badge&logo=youtube&logoColor=white"/></a> -->
 </p>
 
-## Play The Demo :
 
+## Play The Demo :
 https://shahzaibfardeen.github.io/Tic_Tac_Toe/
 
 
-<!-- ## Tutorial
-https://youtu.be/TjKLbj9Ssqo -->
-
 ## Screenshot :
-
 <a href=" https://shahzaibfardeen.github.io/Tic_Tac_Toe/index.html">
  <img src="https://i.imgur.com/K5k9ouj.png"/>
 </a>
